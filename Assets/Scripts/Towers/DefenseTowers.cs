@@ -53,6 +53,8 @@ public class DamageUpgrades
     [SerializeField]
     int m_maxLvl = 3;
     public int maxLvl { get { return m_maxLvl; } set { m_maxLvl = value; } }
+    int m_curLvl = 0;
+    public int curLvl { get { return m_curLvl; } set { m_curLvl = value; } }
     [SerializeField]
     int m_cost = 3;
     public int cost { get { return m_cost; } set { m_cost = value; } }
@@ -66,6 +68,8 @@ public class RangeUpgrades
     [SerializeField]
     int m_maxLvl = 3;
     public int maxLvl { get { return m_maxLvl; } set { m_maxLvl = value; } }
+    int m_curLvl = 0;
+    public int curLvl { get { return m_curLvl; } set { m_curLvl = value; } }
     [SerializeField]
     int m_cost = 3;
     public int cost { get { return m_cost; } set { m_cost = value; } }
@@ -79,6 +83,8 @@ public class RateUpgrades
     [SerializeField]
     int m_maxLvl = 3;
     public int maxLvl { get { return m_maxLvl; } set { m_maxLvl = value; } }
+    int m_curLvl = 0;
+    public int curLvl { get { return m_curLvl; } set { m_curLvl = value; } }
     [SerializeField]
     int m_cost = 3;
     public int cost { get { return m_cost; } set { m_cost = value; } }

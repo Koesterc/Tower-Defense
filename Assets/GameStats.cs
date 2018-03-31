@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameStats : MonoBehaviour {
     public static int lives = 10;
+    public static BaseTowers curSelected;
 
     PlayerStats player1;
     PlayerStats player2;
@@ -18,6 +19,19 @@ public class GameStats : MonoBehaviour {
             GameStats.lives = 0;
             print("GameOver");
         }
+    }
+
+    public void UpgradeDamage()
+    {
+        curSelected.IncreaseDamage();
+    }
+    public void UpgradeRange()
+    {
+        curSelected.IncreaseRange();
+    }
+    public void UpgradeFireRate()
+    {
+        curSelected.IncreaseFireRate();
     }
 }
 

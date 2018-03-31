@@ -13,6 +13,9 @@ public class Tower : DefenseTowers {
     public void Start()
     {
         ac = transform.Find("Sounds/Gunshots").GetComponent<AudioController>();
+        destroyed = transform.Find("Sounds/Destroyed").GetComponent<AudioController>();
+        placed = transform.Find("Sounds/Placed").GetComponent<AudioController>();
+        placed.Play();
         anim = transform.Find("Tower").GetComponent<Animator>();
         InvokeRepeating("Seek", 0f, .5f);
     }
@@ -48,11 +51,11 @@ public class Tower : DefenseTowers {
             shotsFired++;
             if (shotsFired >= 5)
             {
-                lastShot = Time.time + weaponRate.coolDown;
+                lastShot = Time.time + weaponRate.fireRate;
                 shotsFired = 0;
             }
             else
-                lastShot = Time.time + weaponRate.fireRate;
+                lastShot = Time.time + .08f;
             Fire();
         }
     }
@@ -76,5 +79,52 @@ public class Tower : DefenseTowers {
         Gizmos.color = c;
         Gizmos.DrawSphere(transform.position, weaponRange.range);
     }
-    
+
+    public override void IncreaseDamage()
+    {
+        if(firePower.upgrade.curLvl >= firePower.upgrade.maxLvl)
+        {
+            placed.Play();
+            return;
+        }
+        destroyed.Play();
+        firePower.damage += firePower.upgrade.damage;
+        firePower.upgrade.curLvl++;
+    }
+
+    public override void IncreaseFireRate()
+    {
+        if (weaponRate.upgrade.curLvl >= weaponRate.upgrade.maxLvl)
+        {
+            placed.Play();
+            return;
+        }
+        destroyed.Play();
+        weaponRate.fireRate -= weaponRate.upgrade.fireRate;
+        weaponRate.upgrade.curLvl++;
+    }
+
+    public override void IncreaseRange()
+    {
+        if (weaponRange.upgrade.curLvl >= weaponRange.upgrade.maxLvl)
+        {
+            placed.Play();
+            return;
+        }
+        destroyed.Play();
+        weaponRange.range += weaponRange.upgrade.range;
+        weaponRange.upgrade.curLvl++;
+    }
+
+    //public void OnDestroy()
+    //{
+    //    try{
+    //        destroyed.Play();
+    //    }
+    //    catch(Exception e)
+    //    {
+    //        print(e.Message);
+    //    }
+    //}
+
 }

@@ -17,6 +17,16 @@ public abstract class BaseTowers : MonoBehaviour {
     [SerializeField]
     TowerType m_towerType;
     public TowerType towerType { get { return m_towerType; } set { m_towerType = value; } }
-     
 
+    [HideInInspector]
+    AudioController m_placed;
+    public AudioController placed { get { return m_placed; } set { m_placed = value; } }
+
+    [HideInInspector]
+    AudioController m_destroyed;
+    public AudioController destroyed { get { return m_destroyed; } set { m_destroyed = value; } }
+
+    public abstract void IncreaseDamage();
+    public abstract void IncreaseFireRate();
+    public abstract void IncreaseRange();
 }

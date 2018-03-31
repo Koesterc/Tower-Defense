@@ -296,6 +296,7 @@
     <Compile Include="Assets\Scripts\Towers\BaseTowers.cs" />
     <Compile Include="Assets\Scripts\Towers\DefenseTowers.cs" />
     <Compile Include="Assets\Scripts\Towers\Tower.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerController.cs" />
     <Compile Include="Assets\Scripts\WayPoints.cs" />
     <Compile Include="Assets\SpawnManager.cs" />
   </ItemGroup>
