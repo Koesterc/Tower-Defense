@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour {
         if (wayPointIndex >= WayPoints.checkPoints.Count-1)
         {
             //checks to see if game is over
-            GameStats.GameOver();
+            GameManager.gameStats.GameOver();
             SpawnManager.enemyList.Remove(transform);
             Destroy(gameObject);
             return;

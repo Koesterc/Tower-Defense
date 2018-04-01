@@ -3,35 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStats : MonoBehaviour {
-    public static int lives = 10;
-    public static BaseTowers curSelected;
+    public int lives = 10;
 
     PlayerStats player1;
     PlayerStats player2;
     PlayerStats player3;
     PlayerStats player4;
 
-    public static void GameOver()
+    public void GameOver()
     {
-        GameStats.lives--;
-        if (GameStats.lives <= 0)
+        lives--;
+        if (lives <= 0)
         {
-            GameStats.lives = 0;
+            lives = 0;
             print("GameOver");
         }
-    }
-
-    public void UpgradeDamage()
-    {
-        curSelected.IncreaseDamage();
-    }
-    public void UpgradeRange()
-    {
-        curSelected.IncreaseRange();
-    }
-    public void UpgradeFireRate()
-    {
-        curSelected.IncreaseFireRate();
     }
 }
 

@@ -12,7 +12,7 @@ public abstract class BaseTowers : MonoBehaviour {
     int m_cost;
     public int cost { get { return m_cost; } set { m_cost = value; } }
 
-    public enum TowerType { Bank, Arsenal, Support };
+    public enum TowerType { BankTower, AssaultTower, SupportTower };
 
     [SerializeField]
     TowerType m_towerType;

@@ -13,6 +13,6 @@ public class TowerController : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        GameStats.curSelected = tower;
+        GameManager.controller.curSelected = tower;
     }
 }
