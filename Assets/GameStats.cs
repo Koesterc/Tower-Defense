@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameStats : MonoBehaviour {
     public int lives = 10;
 
-    PlayerStats player1;
-    PlayerStats player2;
-    PlayerStats player3;
-    PlayerStats player4;
+    public PlayerStats playerStats;
+    //PlayerStats player2;
+   // PlayerStats player3;
+   // PlayerStats player4;
 
     public void GameOver()
     {
@@ -19,10 +19,22 @@ public class GameStats : MonoBehaviour {
             print("GameOver");
         }
     }
+
+    [System.Serializable]
+    public class PlayerStats
+    {
+        public int score;
+        public int money;
+        public int income;
+        public int upkeep;
+        public float incomeRate = 15f;
+
+        public PlayerSkills playerSkills;
+
+        public class PlayerSkills
+        {
+
+        }
+    }
 }
 
-public class PlayerStats
-{
-    public int score;
-    public int money;
-}

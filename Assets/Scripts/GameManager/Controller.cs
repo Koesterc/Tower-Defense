@@ -5,6 +5,17 @@ using UnityEngine;
 public class Controller : MonoBehaviour {
     public BaseTowers curSelected;
 
+    private void Start()
+    {
+        InvokeRepeating("Income", 0, GameManager.gameStats.playerStats.incomeRate);
+    }
+
+    public void Income()
+    {
+        GameManager.gameStats.playerStats.money += (GameManager.gameStats.playerStats.income - GameManager.gameStats.playerStats.upkeep);
+        print(GameManager.gameStats.playerStats.money);
+    }
+
     public void UpgradeDamage()
     {
         curSelected.IncreaseDamage();

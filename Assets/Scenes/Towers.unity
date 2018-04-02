@@ -339,6 +339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 10
+  playerStats:
+    score: 0
+    money: 100
+    income: 25
+    upkeep: 5
+    incomeRate: 15
 --- !u!4 &12675868
 Transform:
   m_ObjectHideFlags: 0
