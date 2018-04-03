@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour {
     public BaseTowers curSelected;
+    public delegate void PayDay();
+    public event PayDay payDay;
 
     private void Start()
     {
@@ -14,6 +16,14 @@ public class Controller : MonoBehaviour {
     {
         GameManager.gameStats.playerStats.money += (GameManager.gameStats.playerStats.income - GameManager.gameStats.playerStats.upkeep);
         print(GameManager.gameStats.playerStats.money);
+        try
+        {
+            payDay();
+        }
+        catch
+        {
+
+        }
     }
 
     public void UpgradeDamage()

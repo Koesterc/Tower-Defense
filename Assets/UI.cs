@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class UI : MonoBehaviour {
 
@@ -10,29 +9,32 @@ public class UI : MonoBehaviour {
     public PlayerStats playerStats;
     public TowerStats towerStats;
 
+    [System.Serializable]
     public class GeneralStats {
-        public TextMeshProUGUI lives;
-        public TextMeshProUGUI money;
-        public TextMeshProUGUI score;
+        public Text lives;
+        public Text money;
+        public Text score;
     }
+    [System.Serializable]
     public class PlayerStats
     {
-        public TextMeshProUGUI name;
-        public TextMeshProUGUI xp;
-        public TextMeshProUGUI rank;
-        public TextMeshProUGUI kills;
+        public Text name;
+        public Text xp;
+        public Text rank;
+        public Text kills;
     }
+    [System.Serializable]
     public class TowerStats
     {
-        public TextMeshProUGUI name;
-        public TextMeshProUGUI kills;
-        public TextMeshProUGUI dmgLvl;
-        public TextMeshProUGUI dmg;
-        public TextMeshProUGUI fireRateLvl;
-        public TextMeshProUGUI fireRate;
-        public TextMeshProUGUI rangeLvl;
-        public TextMeshProUGUI range;
-        public TextMeshProUGUI sellValue;
+        public Text name;
+        public Text kills;
+        public Text dmgLvl;
+        public Text dmg;
+        public Text fireRateLvl;
+        public Text fireRate;
+        public Text rangeLvl;
+        public Text range;
+        public Text sellValue;
         public Image towerIcon;
     }
 }
