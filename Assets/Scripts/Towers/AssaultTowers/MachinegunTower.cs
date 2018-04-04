@@ -81,42 +81,6 @@ public class MachinegunTower : DefenseTowers {
         Gizmos.DrawSphere(transform.position, weaponRange.range);
     }
 
-    public override void IncreaseDamage()
-    {
-        if(firePower.upgrade.curLvl >= firePower.upgrade.maxLvl)
-        {
-            placed.Play();
-            return;
-        }
-        destroyed.Play();
-        firePower.damage += firePower.upgrade.damage;
-        firePower.upgrade.curLvl++;
-    }
-
-    public override void IncreaseFireRate()
-    {
-        if (weaponRate.upgrade.curLvl >= weaponRate.upgrade.maxLvl)
-        {
-            placed.Play();
-            return;
-        }
-        destroyed.Play();
-        weaponRate.fireRate -= weaponRate.upgrade.fireRate;
-        weaponRate.upgrade.curLvl++;
-    }
-
-    public override void IncreaseRange()
-    {
-        if (weaponRange.upgrade.curLvl >= weaponRange.upgrade.maxLvl)
-        {
-            placed.Play();
-            return;
-        }
-        destroyed.Play();
-        weaponRange.range += weaponRange.upgrade.range;
-        weaponRange.upgrade.curLvl++;
-    }
-
     //public void OnDestroy()
     //{
     //    try{

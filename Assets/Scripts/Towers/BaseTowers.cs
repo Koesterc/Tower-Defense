@@ -25,8 +25,4 @@ public abstract class BaseTowers : MonoBehaviour {
     [HideInInspector]
     AudioController m_destroyed;
     public AudioController destroyed { get { return m_destroyed; } set { m_destroyed = value; } }
-
-    public abstract void IncreaseDamage();
-    public abstract void IncreaseFireRate();
-    public abstract void IncreaseRange();
 }

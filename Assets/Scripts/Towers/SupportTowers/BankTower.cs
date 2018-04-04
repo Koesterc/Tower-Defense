@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BankTower : BaseTowers {
-    public int income;
+    [SerializeField]
+    int m_income;
+    [SerializeField]
+    int m_incomeIncrement;
+    public int incomeIncrement { get { return m_incomeIncrement; } set { value = m_incomeIncrement; } }
+    [SerializeField]
+    int m_maxIncomeLvl;
+    int m_curIncomeLvl;
+    public int curIncomeLvl { get { return m_curIncomeLvl; } set { value = m_curIncomeLvl; } }
+    public int income { get { return m_income; } set { value = m_income; } }
+    public int maxIncomeLvl { get { return m_maxIncomeLvl; } set { value = m_maxIncomeLvl; } }
 
     private void Start()
     {
@@ -21,18 +31,5 @@ public class BankTower : BaseTowers {
     public void PayDay () {
         print("earned!");
 	}
-
-    public override void IncreaseDamage()
-    {
-    }
-
-    public override void IncreaseFireRate()
-    {
-
-    }
-
-    public override void IncreaseRange()
-    {
-    }
 
 }

@@ -297,6 +297,7 @@
     <Compile Include="Assets\Scripts\LevelBuilder\LevelBuilder.cs" />
     <Compile Include="Assets\Scripts\LevelBuilder\Node.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Towers\AssaultTowers\AcidicTower.cs" />
     <Compile Include="Assets\Scripts\Towers\AssaultTowers\MachinegunTower.cs" />
     <Compile Include="Assets\Scripts\Towers\BaseTowers.cs" />
     <Compile Include="Assets\Scripts\Towers\DefenseTowers.cs" />
