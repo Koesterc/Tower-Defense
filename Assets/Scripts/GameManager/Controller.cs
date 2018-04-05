@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour {
     public BaseTowers curSelected;
+    public GameObject selectedPurchase;
     public delegate void PayDay();
     public event PayDay payDay;
+
+    public Color hoverColor;
+    public Color invalidColor;
+    public Color pathColor;
+    public Color groundColor;
 
     //sounds
     AudioController notEnoughMoney;

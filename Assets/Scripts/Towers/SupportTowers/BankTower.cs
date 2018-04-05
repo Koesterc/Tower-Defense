@@ -29,7 +29,6 @@ public class BankTower : BaseTowers {
 
     // Use this for initialization
     public void PayDay () {
-        print("earned!");
 	}
 
 }

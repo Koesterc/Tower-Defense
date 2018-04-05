@@ -15,7 +15,6 @@ public class MachinegunTower : DefenseTowers {
         ac = transform.Find("Sounds/Gunshots").GetComponent<AudioController>();
         destroyed = transform.Find("Sounds/Destroyed").GetComponent<AudioController>();
         placed = transform.Find("Sounds/Placed").GetComponent<AudioController>();
-        placed.Play();
         anim = transform.Find("Tower").GetComponent<Animator>();
         InvokeRepeating("Seek", 0f, .5f);
     }
@@ -45,7 +44,7 @@ public class MachinegunTower : DefenseTowers {
         Vector3 dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        rotationPart.transform.rotation = Quaternion.Slerp(rotationPart.localRotation, q, Time.deltaTime * 3);
+        rotationPart.transform.rotation = Quaternion.Slerp(rotationPart.localRotation, q, Time.deltaTime);
         if (Time.time >= lastShot)
         {
             shotsFired++;
