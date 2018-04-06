@@ -21,30 +21,27 @@ public class Node : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if (!GameManager.controller.selectedPurchase || isOccupied)
+        if (!GameManager.storeManager.curSelected || isOccupied)
             return;
         if (nodeType == NodeType.Path)
             print("you can't build there");
         else
         {
-            GameObject clone = Instantiate(GameManager.controller.selectedPurchase, transform.position, transform.rotation);
-            //subtract from player gold
-            GameManager.gameStats.playerStats.money -= clone.GetComponent<BaseTowers>().cost;
-            GameManager.gameStats.playerStats.upkeep += clone.GetComponent<BaseTowers>().upKeep;
+            GameManager.storeManager.PurchaseUnit(transform.position, transform.rotation, this);
+            print(this.m_type);
             isOccupied = true;
         }
     }
 
     private void OnMouseEnter()
     {
+        if (!GameManager.storeManager.curSelected)
+            return;
         if (isOccupied)
         {
             rend.color = GameManager.controller.invalidColor;
             return;
         }
-
-        if (!GameManager.controller.selectedPurchase)
-            return;
         if (nodeType == NodeType.Path)
             rend.color = GameManager.controller.invalidColor;
         else

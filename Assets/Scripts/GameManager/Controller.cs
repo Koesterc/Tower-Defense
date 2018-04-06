@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour {
     public BaseTowers curSelected;
-    public GameObject selectedPurchase;
     public delegate void PayDay();
     public event PayDay payDay;
 

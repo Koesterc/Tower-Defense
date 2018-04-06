@@ -15,6 +15,9 @@ public abstract class BaseTowers : MonoBehaviour {
     int m_upKeep;
     public int upKeep { get { return m_upKeep; } set { m_upKeep = value; } }
 
+    Node m_node;
+    public Node node { get { return m_node; } set { m_node = value; } }
+
     public enum TowerType { BankTower, AssaultTower, SupportTower };
 
     [SerializeField]

@@ -9,6 +9,7 @@ public class AudioController : MonoBehaviour {
     public AudioSource audioSource;
     [SerializeField]
     AudioClip audioClip;
+    static int playing = 0;
 
     // Use this for initialization
     void Start () {
@@ -17,6 +18,16 @@ public class AudioController : MonoBehaviour {
 
     public void Play()
     {
+        if (playing >= 35)
+            return;
         audioSource.PlayOneShot(audioClip, 1);
+        playing++;
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(audioClip.length);
+        playing--;
     }
 }

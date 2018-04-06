@@ -288,15 +288,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameStats.cs" />
-    <Compile Include="Assets\PoolManager.cs" />
-    <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\GameManager\AudioController.cs" />
     <Compile Include="Assets\Scripts\GameManager\Controller.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\GameStats.cs" />
+    <Compile Include="Assets\Scripts\GameManager\PoolManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\UI.cs" />
     <Compile Include="Assets\Scripts\LevelBuilder\LevelBuilder.cs" />
     <Compile Include="Assets\Scripts\LevelBuilder\Node.cs" />
-    <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Store\StoreItem.cs" />
+    <Compile Include="Assets\Scripts\Store\StoreManager.cs" />
     <Compile Include="Assets\Scripts\Towers\AssaultTowers\AcidicTower.cs" />
     <Compile Include="Assets\Scripts\Towers\AssaultTowers\MachinegunTower.cs" />
     <Compile Include="Assets\Scripts\Towers\BaseTowers.cs" />
@@ -305,8 +309,6 @@
     <Compile Include="Assets\Scripts\Towers\SupportTowers\SupporTowers.cs" />
     <Compile Include="Assets\Scripts\Towers\TowerController.cs" />
     <Compile Include="Assets\Scripts\WayPoints.cs" />
-    <Compile Include="Assets\SpawnManager.cs" />
-    <Compile Include="Assets\UI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     Controller m_Controller;
     public static Controller controller;
+    [SerializeField]
+    StoreManager m_storeManager;
+    public static StoreManager storeManager;
 
 
     // Use this for initialization
@@ -27,7 +30,8 @@ public class GameManager : MonoBehaviour {
         poolManager = m_poolManager;
         ui = m_ui;
         controller = m_Controller;
-	}
+        storeManager = m_storeManager;
+    }
 	
 	// Update is called once per frame
 	void Update () {
