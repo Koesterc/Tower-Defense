@@ -10,7 +10,7 @@ public class LevelBuilder : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Transform panels = GameObject.Find("Nodes").transform;
+        Transform panels = GameObject.Find("NodeController/Nodes").transform;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(0, 5, 0));
         transform.position = worldPoint;
 

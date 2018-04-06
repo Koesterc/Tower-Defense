@@ -28,7 +28,6 @@ public class Controller : MonoBehaviour {
     public void Income()
     {
         GameManager.gameStats.playerStats.money += (GameManager.gameStats.playerStats.income - GameManager.gameStats.playerStats.upkeep);
-        print(GameManager.gameStats.playerStats.money);
         try
         {
             payDay();
