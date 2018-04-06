@@ -50,10 +50,25 @@ public class Node : MonoBehaviour {
 
     private void OnMouseExit()
     {
+        if (!GameManager.storeManager.curSelected)
+            return;
         if (nodeType == NodeType.Path)
             rend.color = GameManager.controller.pathColor;
         else
             rend.color = GameManager.controller.groundColor;
+    }
+    public void Enable()
+    {
+        if (nodeType == NodeType.Path)
+            rend.color = GameManager.controller.pathColor;
+        else
+            rend.color = GameManager.controller.groundColor;
+    }
+    public void Disable()
+    {
+        Color c = Color.white;
+        c.a = 0;
+        rend.color = c;
     }
 
 }

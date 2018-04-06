@@ -31,6 +31,7 @@ public class StoreItem : MonoBehaviour, IPointerExitHandler, IPointerEnterHandle
     public void OnPointerClick(PointerEventData eventData)
     {
         GameManager.storeManager.curSelected = tower;
+        GameManager.nodeController.EnableNodes();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

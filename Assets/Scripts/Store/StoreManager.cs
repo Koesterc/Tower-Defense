@@ -13,5 +13,6 @@ public class StoreManager : MonoBehaviour {
         GameManager.gameStats.playerStats.money -= clone.GetComponent<BaseTowers>().cost;
         GameManager.gameStats.playerStats.upkeep += clone.GetComponent<BaseTowers>().upKeep;
         curSelected = null;
+        GameManager.nodeController.DisableNodes();
     }
 }

@@ -293,6 +293,7 @@
     <Compile Include="Assets\Scripts\GameManager\Controller.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameStats.cs" />
+    <Compile Include="Assets\Scripts\GameManager\NodeController.cs" />
     <Compile Include="Assets\Scripts\GameManager\PoolManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\GameManager\SpawnManager.cs" />
