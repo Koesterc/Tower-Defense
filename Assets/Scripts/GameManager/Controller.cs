@@ -16,6 +16,10 @@ public class Controller : MonoBehaviour {
     AudioController notEnoughMoney;
     AudioController maxedOut;
     AudioController upgradeSound;
+    Vector3 cameraPos;
+    Transform cam;
+    Camera _camera;
+    bool isZoom = false;
 
     private void Start()
     {
@@ -23,6 +27,41 @@ public class Controller : MonoBehaviour {
         notEnoughMoney = transform.Find("Sounds/NotEnoughMoney").GetComponent<AudioController>();
         upgradeSound = transform.Find("Sounds/UpgradeSound").GetComponent<AudioController>();
         maxedOut = transform.Find("Sounds/MaxedOut").GetComponent<AudioController>();
+        cam = GameObject.Find("MainCamera").transform;
+        cameraPos = cam.transform.position;
+        _camera = cam.gameObject.GetComponent<Camera>();
+    }
+
+    public IEnumerator ZoomIn()
+    {
+        if (isZoom)
+        {
+            yield return null;
+            StartCoroutine(ZoomOut());
+        }
+        float  elapsedTime = 0;
+        float duration = .5f;
+        while (elapsedTime < duration)
+        {
+            cam.position = Vector3.Lerp(cam.transform.position, new Vector3(curSelected.transform.position.x, curSelected.transform.position.y, cam.position.z), (elapsedTime / duration));
+            _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, 8, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        isZoom = true;
+    }
+    public IEnumerator ZoomOut()
+    {
+        float elapsedTime = 0;
+        float duration = .5f;
+        while (elapsedTime < duration)
+        {
+            cam.position = Vector3.Lerp(cam.transform.position, new Vector3(cameraPos.x, cameraPos.y, cam.position.z), (elapsedTime / duration));
+            _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, 12, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        isZoom = false;
     }
 
     public void Income()
@@ -47,6 +86,7 @@ public class Controller : MonoBehaviour {
             maxedOut.Play();
             return;
         }
+
         upgradeSound.Play();
         dt.firePower.damage += dt.firePower.upgrade.damage;
         dt.firePower.upgrade.curLvl++;

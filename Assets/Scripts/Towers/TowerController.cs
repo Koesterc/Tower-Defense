@@ -14,5 +14,6 @@ public class TowerController : MonoBehaviour {
     private void OnMouseDown()
     {
         GameManager.controller.curSelected = tower;
+        StartCoroutine(GameManager.controller.ZoomIn());
     }
 }
