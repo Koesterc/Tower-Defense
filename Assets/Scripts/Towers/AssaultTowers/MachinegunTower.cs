@@ -41,10 +41,10 @@ public class MachinegunTower : DefenseTowers {
     {
         if (!target)
             return;
-        Vector3 dir = target.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        rotationPart.transform.rotation = Quaternion.Slerp(rotationPart.localRotation, q, Time.deltaTime);
+		Vector3 dir = target.transform.position - rotationPart.transform.position;
+		float zRotation = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
+		rotationPart.transform.rotation = Quaternion.Slerp(rotationPart.transform.rotation, 
+			Quaternion.Euler (0f, 0f, zRotation - 90), Time.deltaTime * 3f);
         if (Time.time >= lastShot)
         {
             shotsFired++;
